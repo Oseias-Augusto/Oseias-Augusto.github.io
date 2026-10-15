@@ -1,0 +1,47 @@
+.pagina {
+  position: fixed;
+  inset: 4.5rem 0 0;
+  width: 100%;
+  padding: 1rem 1.25rem 1.25rem;
+  overflow: hidden;
+}
+
+.conteudo {
+  width: 100%;
+  max-width: 68rem;
+  height: 100%;
+  margin: 0 auto;
+  animation: aparecer 240ms ease-out;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 960px) {
+  .pagina {
+    inset: 0 0 0 var(--lateral);
+    width: auto;
+    padding: 2.25rem 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagina {
+    padding: 0.75rem 1rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .conteudo {
+    animation: none;
+  }
+}
